@@ -20,7 +20,18 @@ public class SignInTest {
         driver.findElement(By.linkText("Your trips")).click();
         driver.findElement(By.id("SignIn")).click();
 
-        driver.findElement(By.id("signInButton")).click();
+        try {
+             	
+        	driver.switchTo().frame(0);
+        	 
+        	driver.findElement(By.id("signInButton")).click();
+        	
+        	}
+        	catch (NoSuchFrameException e)
+            {
+        	System.out.println(e.getMessage());
+
+        	}
 
         String errors1 = driver.findElement(By.id("errors1")).getText();
         Assert.assertTrue(errors1.contains("There were errors in your submission"));
