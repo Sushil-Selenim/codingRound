@@ -10,8 +10,8 @@ public class HotelBookingTest {
 
     WebDriver driver = new ChromeDriver();
 
-    @FindBy(linkText = "Hotels")
-    private WebElement hotelLink;
+    @FindBy(css="a[title='Hotels']")
+        private WebElement hotelLink;
 
     @FindBy(id = "Tags")
     private WebElement localityTextBox;
